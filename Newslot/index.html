@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Gravity Wells: Orbital Drop</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div id="game-container">
+    <!-- Top HUD -->
+    <header id="hud">
+      <div class="hud-block">
+        <span class="label">BALANCE</span>
+        <span id="balance">1,000.00</span>
+      </div>
+      <div class="hud-block">
+        <span class="label">BET</span>
+        <span id="bet">1.00</span>
+      </div>
+      <div class="hud-block">
+        <span class="label">WIN</span>
+        <span id="win">0.00</span>
+      </div>
+      <div class="hud-block core-meter">
+        <span class="label">CORE CHARGE</span>
+        <div id="core-bar"><div id="core-fill"></div></div>
+        <span id="core-pct">0%</span>
+      </div>
+    </header>
+
+    <!-- Main Grid -->
+    <canvas id="grid" width="800" height="800"></canvas>
+
+    <!-- Controls -->
+    <footer id="controls">
+      <button id="spin-btn">SPIN</button>
+      <button id="buy-singularity">BUY SINGULARITY (100x)</button>
+      <button id="buy-blackhole">BUY BLACK HOLE (500x)</button>
+      <button id="autoplay">AUTO ×10</button>
+    </footer>
+
+    <!-- Overlays -->
+    <div id="singularity-overlay" class="hidden">
+      <h1>SINGULARITY</h1>
+      <p id="singularity-mult">×2</p>
+    </div>
+
+    <div id="blackhole-overlay" class="hidden">
+      <h1>BLACK HOLE BONUS</h1>
+      <p id="bh-symbol">Symbol 1 of 10</p>
+      <p id="bh-mult">Multiplier: ×1</p>
+      <div class="bh-buttons">
+        <button id="bh-eject">EJECT</button>
+        <button id="bh-dive">DIVE DEEPER</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="math/rng.js"></script>
+  <script src="math/paytable.js"></script>
+  <script src="math/orbits.js"></script>
+  <script src="render/particles.js"></script>
+  <script src="render/canvas.js"></script>
+  <script src="audio/sfx.js"></script>
+  <script src="game.js"></script>
+</body>
+</html>
